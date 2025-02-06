@@ -94,11 +94,5 @@ def predict():
     return jsonify({"prediction": predictions})
 
 if __name__ == "__main__":
-   
-    if os.environ["ENVIRONMENT"] == "production":
-        # Use Gunicorn to run the app in production
-        from gunicorn.app.wsgiapp import run
-        run()
-    else:
-        # Use Flask's built-in server for local development
-        app.run(debug=True, host='0.0.0.0', port=5000)
+    # Use Flask's built-in server for local development
+    app.run(debug=True, host='0.0.0.0', port=5000)
