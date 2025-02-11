@@ -5,6 +5,43 @@ This repository contains a demo Flask application with instructions on how to de
 ### Input Shape - 
 PyTorch: (1, 3, 640, 640) BCHW and output shape(s) ((1, 67, 8400), (1, 32, 160, 160)) (350.7 MB)
 
+## Disease
+```json
+{
+    "0": "Caries",
+    "1": "Crown",
+    "2": "Filling",
+    "3": "Implant",
+    "4": "Malaligned",
+    "5": "Mandibular Canal",
+    "6": "Missing teeth",
+    "7": "Periapical lesion",
+    "8": "Retained root",
+    "9": "Root Canal Treatment",
+    "10": "Root Piece",
+    "11": "impacted tooth",
+    "12": "maxillary sinus",
+    "13": "Bone Loss",
+    "14": "Fracture teeth",
+    "15": "Permanent Teeth",
+    "16": "Supra Eruption",
+    "17": "TAD",
+    "18": "abutment",
+    "19": "attrition",
+    "20": "bone defect",
+    "21": "gingival former",
+    "22": "metal band",
+    "23": "orthodontic brackets",
+    "24": "permanent retainer",
+    "25": "post - core",
+    "26": "plating",
+    "27": "wire",
+    "28": "Cyst",
+    "29": "Root resorption",
+    "30": "Primary teeth"
+}
+```
+
 ## Prerequisites
 
 - Python 3.6 or later

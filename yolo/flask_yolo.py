@@ -41,7 +41,7 @@ def predict():
     try:
         results = model.predict(image_array)
         predictions = {}
-
+        print("Results:", results)
         # Process detections
         for result in results:
             for box in result.boxes:

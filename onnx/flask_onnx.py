@@ -59,7 +59,7 @@ def predict():
         ort_outs = model.run(None, ort_inputs)
 
         # Debugging: Print model output
-        # print("Model Output:", ort_outs)
+        print("Model Output:", ort_outs)
 
         # Process the model's output (modify as needed based on your model's output format)
         # Process the model's output
