@@ -1,0 +1,44 @@
+{
+  "prediction": {
+    "caries": [
+      { "bbox": [245, 361, 263, 403], "class_id": 0, "confidence": 0.51 }
+    ],
+    "crown": [
+      { "bbox": [185, 284, 223, 328], "class_id": 1, "confidence": 0.83 },
+      { "bbox": [397, 343, 436, 395], "class_id": 1, "confidence": 0.82 },
+      { "bbox": [428, 324, 473, 380], "class_id": 1, "confidence": 0.82 },
+      { "bbox": [181, 324, 229, 384], "class_id": 1, "confidence": 0.8 },
+      { "bbox": [409, 300, 446, 344], "class_id": 1, "confidence": 0.61 }
+    ],
+    "filling": [
+      { "bbox": [194, 260, 220, 294], "class_id": 2, "confidence": 0.48 },
+      { "bbox": [419, 288, 431, 306], "class_id": 2, "confidence": 0.28 }
+    ],
+    "periapical_lesion": [
+      { "bbox": [165, 417, 184, 449], "class_id": 7, "confidence": 0.61 },
+      { "bbox": [411, 439, 431, 475], "class_id": 7, "confidence": 0.3 },
+      { "bbox": [414, 441, 429, 470], "class_id": 7, "confidence": 0.3 },
+      { "bbox": [189, 425, 209, 459], "class_id": 7, "confidence": 0.27 }
+    ],
+    "root_canal_treatment": [
+      { "bbox": [420, 387, 443, 443], "class_id": 9, "confidence": 0.78 },
+      { "bbox": [197, 380, 210, 444], "class_id": 9, "confidence": 0.69 },
+      { "bbox": [179, 372, 201, 419], "class_id": 9, "confidence": 0.66 },
+      { "bbox": [190, 215, 201, 269], "class_id": 9, "confidence": 0.61 },
+      { "bbox": [446, 376, 465, 437], "class_id": 9, "confidence": 0.58 },
+      { "bbox": [411, 392, 423, 459], "class_id": 9, "confidence": 0.52 },
+      { "bbox": [453, 372, 479, 423], "class_id": 9, "confidence": 0.52 },
+      { "bbox": [447, 376, 460, 432], "class_id": 9, "confidence": 0.41 },
+      { "bbox": [416, 225, 423, 295], "class_id": 9, "confidence": 0.35 },
+      { "bbox": [422, 218, 434, 292], "class_id": 9, "confidence": 0.33 }
+    ],
+    "root_piece": [
+      { "bbox": [133, 213, 153, 259], "class_id": 10, "confidence": 0.87 },
+      { "bbox": [384, 210, 411, 320], "class_id": 10, "confidence": 0.85 },
+      { "bbox": [444, 211, 469, 308], "class_id": 10, "confidence": 0.78 },
+      { "bbox": [370, 229, 395, 321], "class_id": 10, "confidence": 0.57 },
+      { "bbox": [147, 221, 161, 266], "class_id": 10, "confidence": 0.56 },
+      { "bbox": [216, 206, 245, 301], "class_id": 10, "confidence": 0.3 }
+    ]
+  }
+}

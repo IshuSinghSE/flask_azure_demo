@@ -2,6 +2,9 @@
 
 This repository contains a demo Flask application with instructions on how to deploy it on Azure.
 
+### Input Shape - 
+PyTorch: (1, 3, 640, 640) BCHW and output shape(s) ((1, 67, 8400), (1, 32, 160, 160)) (350.7 MB)
+
 ## Prerequisites
 
 - Python 3.6 or later

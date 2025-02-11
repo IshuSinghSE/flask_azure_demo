@@ -1,6 +1,7 @@
-Flask==2.2.3
+Flask
 Flask-Cors
-gunicorn==20.1.0
-onnxruntime==1.9.0
+gunicorn
+onnxruntime
 onnx
-numpy==1.21.2
+numpy
+opencv-python
