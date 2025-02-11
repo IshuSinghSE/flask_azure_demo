@@ -17,10 +17,10 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": os.getenv("ORIGINS")}})  # Allow requests from specified origins
 
 # Get Azure Blob Storage connection string from environment variable
-connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-blob_service_client = BlobServiceClient.from_connection_string(connect_str)
-container_name = os.getenv("AZURE_BLOB_CONTAINER_NAME")
-blob_name = os.getenv("AZURE_BLOB_MODEL_PATH")  # Path to your model within the container
+connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING") | ''
+blob_service_client = BlobServiceClient.from_connection_string(connect_str) 
+container_name = os.getenv("AZURE_BLOB_CONTAINER_NAME") | ''
+blob_name = os.getenv("AZURE_BLOB_MODEL_PATH") | ''  # Path to your model within the container
 
 model = None
 
@@ -111,8 +111,7 @@ def predict():
 if __name__ == "__main__":
     if os.getenv("ENVIRONMENT") == "production":
         # Use Gunicorn to run the app in production
-        from gunicorn.app.wsgiapp import run
-        run()
+        app.run()
     else:
         # Use Flask's built-in server for local development
         app.run(debug=True, host='0.0.0.0', port=5000)
