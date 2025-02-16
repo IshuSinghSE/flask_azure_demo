@@ -67,6 +67,7 @@ with app.app_context():
 
 @app.route("/")
 def home():
+    print("🌸 Welcome to the YOLOv5 API!")
     return jsonify({"message": "Welcome to the YOLOv5 API!", "host": request.host, "url": request.url})
 
 @app.route("/predict", methods=["POST"])

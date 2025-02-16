@@ -22,8 +22,9 @@ def load_model():
         print(f"Error loading model: {e}")
         return jsonify({"error": f"Failed to load model: {e}"}), 500
 
-# with app.app_context():
-
+with app.app_context():
+    print("💮 Loading ONNX model...")
+    load_model()
 
 @app.route("/")
 def home():
@@ -31,8 +32,6 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    print("💮 Loading ONNX model...")
-    load_model()
     """Receive an image from the frontend, run ONNX model, and return detections."""
     if "file" not in request.files:
         return jsonify({"error": "No file uploaded"}), 400
@@ -63,7 +62,6 @@ def predict():
         print("Model Output:", ort_outs)
 
         # Process the model's output (modify as needed based on your model's output format)
-        # Process the model's output
         predictions = {}
         for result in ort_outs[0]:  # Assuming the first output contains detection results
             for detection in result:
@@ -88,5 +86,4 @@ def predict():
     return jsonify({"predictions": predictions})
 
 if __name__ == "__main__":
-    # Remove the app.run() call to use Gunicorn instead
-    pass
+    app.run(debug=True, host='0.0.0.0', port=5000)

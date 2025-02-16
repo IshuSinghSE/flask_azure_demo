@@ -28,6 +28,7 @@ with app.app_context():
 
 @app.route("/")
 def home():
+    print("Welcome to the YOLOv5 API!")
     return jsonify({"message": "Welcome to the YOLOv5 API!", "host": request.host, "url": request.url})
 
 @app.route("/predict", methods=["POST"])
@@ -62,23 +63,21 @@ def predict():
         print("Model Output:", ort_outs)
 
         # Process the model's output (modify as needed based on your model's output format)
-        # Process the model's output
         predictions = {}
-        for result in ort_outs[0]:  # Assuming the first output contains detection results
-            for detection in result:
-                class_id = int(detection[1])
-                confidence = round(float(detection[2]), 2)
-                x1, y1, x2, y2 = map(int, detection[3:7])
+        for detection in ort_outs[0][0]:  # Assuming the first output contains detection results
+            class_id = int(detection[1])
+            confidence = round(float(detection[2]), 2)
+            x1, y1, x2, y2 = map(int, detection[3:7])
 
-                prediction = {
-                    "bbox": [x1, y1, x2, y2],
-                    "class_id": class_id,
-                    "confidence": confidence
-                }
-                label = f"class_{class_id}".replace(" ", "_").lower()  # Modify according to your model's class labels
-                if label not in predictions:
-                    predictions[label] = []
-                predictions[label].append(prediction)
+            prediction = {
+                "bbox": [x1, y1, x2, y2],
+                "class_id": class_id,
+                "confidence": confidence
+            }
+            label = f"class_{class_id}".replace(" ", "_").lower()  # Modify according to your model's class labels
+            if label not in predictions:
+                predictions[label] = []
+            predictions[label].append(prediction)
 
     except Exception as e:
         print(f"Error processing prediction: {e}")  # Debugging: Print error
